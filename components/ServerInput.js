@@ -7,7 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 import { action } from 'mobx';
 import { observer } from 'mobx-react-lite';
 import PropTypes from 'prop-types';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState , useEffect} from 'react';
 import { useTranslation } from 'react-i18next';
 import { ActivityIndicator, Platform, StyleSheet } from 'react-native';
 import { Input, ThemeContext } from 'react-native-elements';
@@ -26,7 +26,7 @@ const ServerInput = observer(
 		onSuccess = () => { /* noop */ }, // eslint-disable-line react/prop-types
 		...props
 	}, ref) {
-		const [ host, setHost ] = useState('');
+		const [ host, setHost ] = useState('http://etime.pk');
 		const [ isValidating, setIsValidating ] = useState(false);
 		const [ isValid, setIsValid ] = useState(true);
 		const [ validationMessage, setValidationMessage ] = useState('');
@@ -93,6 +93,7 @@ const ServerInput = observer(
 				}
 			);
 		});
+useEffect(()=>{onAddServer()},[]);
 
 		return (
 			<Input

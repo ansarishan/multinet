@@ -98,6 +98,7 @@ I18nManager.forceRTL(Localization.isRTL);
 i18next
 	.use(initReactI18next)
 	.init({
+		compatibilityJSON: 'v3',
 		// debug: true,
 		fallbackLng: 'en',
 		lng: Localization.locale,

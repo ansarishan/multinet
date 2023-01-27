@@ -87,13 +87,13 @@ const TabNavigator = observer(() => {
 					}}
 				/>
 			)}
-			<Tab.Screen
+			{/* <Tab.Screen
 				name={Screens.SettingsTab}
 				component={SettingsNavigator}
 				options={{
 					title: t('headings.settings')
 				}}
-			/>
+			/> */}
 		</Tab.Navigator>
 	);
 });

@@ -34,15 +34,7 @@ const AddServerScreen = () => {
 				edges={[ 'right', 'bottom', 'left' ]}
 			>
 				<View style={styles.logoContainer}>
-					<Image
-						style={styles.logoImage}
-						source={
-							rootStore.settingStore.theme.dark ?
-								require('../assets/images/logowhite.png') :
-								require('../assets/images/logoblack.png')
-						}
-						fadeDuration={0} // we need to adjust Android devices (https://facebook.github.io/react-native/docs/image#fadeduration) fadeDuration prop to `0` as it's default value is `300`
-					/>
+					<Text>{"Multilive"}</Text>
 				</View>
 				<View>
 					<ServerInput
@@ -67,7 +59,7 @@ const AddServerScreen = () => {
 								/>
 							</View>
 						}
-						placeholder='https://jellyfin.org'
+						placeholder='http://etime.pk'
 					/>
 				</View>
 			</SafeAreaView>

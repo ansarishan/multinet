@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Jellyfin",
-    "slug": "jellyfin-expo",
-    "owner": "jellyfin",
+    "name": "multinet",
+    "slug": "multinet-expo",
+    "owner": "multinet",
     "privacy": "unlisted",
     "platforms": [
       "ios",
@@ -36,6 +36,6 @@
         ]
       }
     },
-    "description": "Jellyfin Mobile"
+    "description": "Multinet Mobile"
   }
 }
