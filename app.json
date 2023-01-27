@@ -2,7 +2,7 @@
   "expo": {
     "name": "multinet",
     "slug": "multinet-expo",
-    "owner": "multinet",
+    "owner": "ansarishan",
     "privacy": "unlisted",
     "platforms": [
       "ios",
@@ -36,6 +36,14 @@
         ]
       }
     },
-    "description": "Multinet Mobile"
+    "description": "Multinet Mobile",
+    "extra": {
+      "eas": {
+        "projectId": "454de782-84f9-4e81-8eba-74efe355c2b9"
+      }
+    },
+    "android": {
+      "package": "com.multilivenet"
+    }
   }
 }
