@@ -6,7 +6,9 @@
     "ios": "expo-cli start --ios",
     "eject": "expo-cli eject",
     "lint": "eslint \".\"",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "eas-build-pre-install": "npm install --save --legacy-peer-deps"
+
   },
   "jest": {
     "preset": "jest-expo",
