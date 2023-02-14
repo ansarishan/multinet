@@ -34,7 +34,15 @@ const AddServerScreen = () => {
 				edges={[ 'right', 'bottom', 'left' ]}
 			>
 				<View style={styles.logoContainer}>
-					<Text>{"Multilive"}</Text>
+				<Image
+						style={styles.logoImage}
+						source={
+							rootStore.settingStore.theme.dark ?
+								require('../assets/images/logowhite.png') :
+								require('../assets/images/logoblack.png')
+						}
+						fadeDuration={0} // we need to adjust Android devices (https://facebook.github.io/react-native/docs/image#fadeduration) fadeDuration prop to `0` as it's default value is `300`
+					/>
 				</View>
 				<View>
 					<ServerInput
@@ -80,7 +88,12 @@ const styles = StyleSheet.create({
 		paddingVertical: 10,
 		height: '40%',
 		maxHeight: 151,
-		maxWidth: '90%'
+		maxWidth: '90%',
+		fontSize:36
+	},
+	logoText: {
+		
+		fontSize:36
 	},
 	logoImage: {
 		flex: 1,

@@ -60,7 +60,12 @@ const TabNavigator = observer(() => {
 	}
 
 	return (
+
+
+
+		
 		<Tab.Navigator
+		
 			screenOptions={({ route }) => ({
 				headerShown: false,
 				tabBarIcon: ({ focused, color, size }) => TabIcon(route.name, focused, color, size),

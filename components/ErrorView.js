@@ -58,6 +58,7 @@ const ErrorView = ({
 						style={styles.details}
 					>
 						{detailText}
+						
 					</Text>
 				))}
 			</View>
@@ -111,7 +112,8 @@ const styles = StyleSheet.create({
 		marginHorizontal: 20
 	},
 	details: {
-		fontSize: 15
+		fontSize: 15,
+		color:'black'
 	}
 });
 

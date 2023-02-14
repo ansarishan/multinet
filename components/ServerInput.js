@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import React, { useContext, useState , useEffect} from 'react';
 import { useTranslation } from 'react-i18next';
 import { ActivityIndicator, Platform, StyleSheet } from 'react-native';
-import { Input, ThemeContext } from 'react-native-elements';
+import { Input, ThemeContext, Text } from 'react-native-elements';
 
 import Screens from '../constants/Screens';
 import { useStores } from '../hooks/useStores';
@@ -26,7 +26,7 @@ const ServerInput = observer(
 		onSuccess = () => { /* noop */ }, // eslint-disable-line react/prop-types
 		...props
 	}, ref) {
-		const [ host, setHost ] = useState('http://etime.pk');
+		const [ host, setHost ] = useState('http://etime.pk'); //https://demo.jellyfin.org/  // http://etime.pk
 		const [ isValidating, setIsValidating ] = useState(false);
 		const [ isValid, setIsValid ] = useState(true);
 		const [ validationMessage, setValidationMessage ] = useState('');
@@ -36,7 +36,9 @@ const ServerInput = observer(
 		const { t } = useTranslation();
 		const { theme } = useContext(ThemeContext);
 
-		const onAddServer = action(async () => {
+		const onAddServer = action(async () =>
+		
+		{
 			console.log('add server', host);
 			if (!host) {
 				setIsValid(false);
@@ -93,42 +95,18 @@ const ServerInput = observer(
 				}
 			);
 		});
-useEffect(()=>{onAddServer()},[]);
+useEffect(()=>{
+
+
+	onAddServer().then(()=>{});
+},[]);
 
 		return (
-			<Input
-				testID='server-input'
-				ref={ref}
-				inputContainerStyle={{
-					...styles.inputContainerStyle,
-					backgroundColor: theme.colors.searchBg
-				}}
-				leftIcon={{
-					name: getIconName('globe-outline'),
-					type: 'ionicon',
-					color: theme.colors.grey3
-				}}
-				leftIconContainerStyle={styles.leftIconContainerStyle}
-				labelStyle={{
-					color: theme.colors.grey1
-				}}
-				placeholderTextColor={theme.colors.grey3}
-				rightIcon={isValidating ? <ActivityIndicator /> : null}
-				selectionColor={theme.colors.primary}
-				autoCapitalize='none'
-				autoCorrect={false}
-				autoCompleteType='off'
-				autoFocus={true}
-				keyboardType={Platform.OS === 'ios' ? 'url' : 'default'}
-				returnKeyType='go'
-				textContentType='URL'
-				editable={!isValidating}
-				value={host}
-				errorMessage={isValid ? null : validationMessage}
-				onChangeText={text => setHost(sanitizeHost(text))}
-				onSubmitEditing={() => onAddServer()}
-				{...props}
-			/>
+			<>
+<Text style={styles.inputContainerStyle1}>{isValidating?"Connecting to Multilive Server...":""}</Text>
+
+<Text style={styles.inputContainerStyle}>{isValid ? null : validationMessage +"!" } </Text>
+</>
 		);
 	}, { forwardRef: true }
 );
@@ -138,15 +116,23 @@ ServerInput.propTypes = {
 	onSuccess: PropTypes.func
 };
 
+
 const styles = StyleSheet.create({
 	inputContainerStyle: {
-		marginTop: 8,
-		marginBottom: 12,
+	
+		fontSize:24,
 		borderRadius: 3,
-		borderBottomWidth: 0
+		borderBottomWidth: 0,
+		color:'red',
+		alignSelf: 'center'
 	},
-	leftIconContainerStyle: {
-		marginLeft: 12
+	inputContainerStyle1: {
+	
+		fontSize:24,
+		borderRadius: 3,
+		borderBottomWidth: 0,
+		color:'yellow',
+		alignSelf: 'center'
 	}
 });
 
