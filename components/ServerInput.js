@@ -103,7 +103,7 @@ useEffect(()=>{
 
 		return (
 			<>
-<Text style={styles.inputContainerStyle1}>{isValidating?"Connecting to Multilive Server...":""}</Text>
+<Text style={styles.inputContainerStyle1}>{isValidating?"Connecting To Multilive Server...":""}</Text>
 
 <Text style={styles.inputContainerStyle}>{isValid ? null : validationMessage +"!" } </Text>
 </>
