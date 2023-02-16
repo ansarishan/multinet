@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "multilive",
-    "slug": "multilive-expo",
+    "slug": "multinet-expo",
     "owner": "ansarishan",
     "privacy": "unlisted",
     "platforms": [
@@ -36,7 +36,7 @@
         ]
       }
     },
-    "description": "Multilive Mobile",
+    "description": "Multinet Mobile",
     "extra": {
       "eas": {
         "projectId": "454de782-84f9-4e81-8eba-74efe355c2b9"
