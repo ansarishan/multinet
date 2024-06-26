@@ -26,7 +26,7 @@ const ServerInput = observer(
 		onSuccess = () => { /* noop */ }, // eslint-disable-line react/prop-types
 		...props
 	}, ref) {
-		const [ host, setHost ] = useState('http://etime.pk'); //https://demo.jellyfin.org/  // http://etime.pk
+		const [ host, setHost ] = useState('http://etime.pk:8080'); //https://demo.jellyfin.org/  // http://etime.pk
 		const [ isValidating, setIsValidating ] = useState(false);
 		const [ isValid, setIsValid ] = useState(true);
 		const [ validationMessage, setValidationMessage ] = useState('');
